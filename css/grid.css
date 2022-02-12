@@ -16,7 +16,7 @@ span{
     display: inline-block;
     position: relative; 
     transition: all ease 0.4s;
-    color:white
+    color:white;
 }
 p {
     text-transform: uppercase;
@@ -28,7 +28,7 @@ p {
     right:0;
 }
 .test:hover span{
-    padding-right:35px;
+    padding-right:25px;
 }
 span:after{
     position: absolute;
