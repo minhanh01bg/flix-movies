@@ -28,12 +28,12 @@ p {
     right:0;
 }
 .test:hover span{
-    padding-right:25px;
+    padding-right:35px;
 }
 span:after{
     position: absolute;
     top:-1px;
-    right:-20px;
+    right:-30px;
     opacity: 0;
     content:'\00bb';
     color:#fff;
