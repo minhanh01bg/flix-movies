@@ -175,8 +175,19 @@ a.logo:hover {
   left: 6px;
 }
 
-/* hero-slide-item */
-
+/* hero-slide-item -------------------------------------------------------*/
+.hero-section{
+  position: relative;
+  bottom:-50px;
+}
+.hero-section::before{
+  position: absolute;
+  content: "";
+  height:150px;
+  bottom: 100%;
+  width: 100%;
+  background:linear-gradient(to top, rgba(0,0,0,0.6),rgba(0,0,0,0));
+}
 .hero-slide-item {
   padding-top: 40%;
   position: relative;
@@ -372,7 +383,7 @@ a.logo:hover {
   font-weight: 700;
 }
 
-/* movies */
+/* movies - header*/
 .movies-header-box {
   width: 100%;
   margin-top: 100px;
@@ -417,6 +428,7 @@ a.logo:hover {
 }
 
 .movies-img img {
+  width: 100%;
   /* object-fit: contain;
    object-position: top; */
   height: 100%;
@@ -457,6 +469,7 @@ a.logo:hover {
 .movies-list {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .movies-box:hover {
