@@ -5,6 +5,7 @@
   --text-color: #ffffff;
 
   --nav-height: 60px;
+  --space-top: 30px;
 }
 * {
   padding: 0;
@@ -113,11 +114,15 @@ a.logo:hover {
 .btn-hover:hover::before {
   width: 100%;
 }
+.btn i,
 .btn span {
   z-index: 1;
 }
+.btn i {
+  margin-right: 0.5rem;
+}
 .hamburger-menu {
-  display:none;
+  display: none;
   --size: 30px;
   height: var(--size);
   width: var(--size);
@@ -154,48 +159,193 @@ a.logo:hover {
   bottom: -10px;
 }
 
-.hamburger-menu.active .hamburger{
+.hamburger-menu.active .hamburger {
   background-color: transparent;
 }
 
-.hamburger-menu.active .hamburger::before{
+.hamburger-menu.active .hamburger::before {
   transform-origin: top left;
-  transform:rotate(45deg);
-  left:6px;
+  transform: rotate(45deg);
+  left: 6px;
 }
 
-.hamburger-menu.active .hamburger::after{
+.hamburger-menu.active .hamburger::after {
   transform-origin: bottom left;
-  transform:rotate(-45deg);
-  left:6px;
+  transform: rotate(-45deg);
+  left: 6px;
+}
+
+/* hero-slide-item */
+
+.hero-slide-item {
+  padding-top: 40%;
+  position: relative;
+  /* overflow:hidden; khi chiều cao của box không đủ chứa text thì text bị tràn sẽ được giấu đi*/
+  overflow: hidden;
+}
+
+.hero-slide-item img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-slide-item-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color);
+  display: flex;
+}
+
+.item-content-wrapper {
+  padding-left: 5rem;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.item-content-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.item-content-title {
+  font-size: 5rem;
+  line-height: 5rem;
+  font-weight: 900;
+}
+
+.movie-infos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: calc(var(--space-top) / 2);
+}
+.movie-info {
+  display: flex;
+  align-items: center;
+  font-size: -8rem;
+  font-weight: 600;
+}
+.movie-info span {
+  margin-left: 5px;
+}
+.movie-info i {
+  color: var(--main-color);
+}
+.movie-info ~ .movie-info {
+  margin-left: 5px;
+}
+
+.item-content-description {
+  font-size: 1.15rem;
+  margin-top: var(--space-top);
+  line-height: 1.5rem;
+}
+
+.item-action {
+  margin-top: var(--space-top);
+}
+.carousel-nav-center {
+  position: relative;
+}
+.carousel-nav-center .owl-nav button i {
+  font-size: 3rem;
+}
+.carousel-nav-center .owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-nav-center .owl-nav .owl-prev {
+  position: absolute;
+  left: 5px;
+}
+.carousel-nav-center .owl-nav .owl-next {
+  position: absolute;
+  right: 5px;
+}
+.owl-nav button {
+  border: none;
+  outline: none;
+}
+
+.owl-nav button i {
+  border-radius: 50%;
+}
+
+.owl-nav button i:hover{
+  background-color: rgba(150, 107, 206, 0.6);
+  color:var(--main-color);
+}
+
+.top-down{
+  transform:translateY(-50px);
+  visibility:hidden;
+  opacity: 0;
+  transition:.5s ease-in-out;
+}
+
+.delay-2{
+  /* delay style*/
+  transition-delay:0.2s;
+}
+
+.delay-4{
+  transition-delay:0.4s;
+}
+
+.delay-6{
+  transition-delay:0.6s;
+}
+
+.delay-8{
+  transition-delay:0.8s;
+}
+.owl-item.active .top-down{
+  transform:translateY(0);
+  visibility: visible;
+  opacity: 1;
 }
 
 /* responsive */
-@media only screen and (max-width:850px) {
-  html{
-    font-size:12px;
+@media only screen and (max-width: 850px) {
+  html {
+    font-size: 12px;
   }
-  .hamburger-menu{
-    display:grid;
+  .hamburger-menu {
+    display: grid;
   }
-  
-  .nav-menu{
+
+  .nav-menu {
     /* display:none; */
     position: absolute;
-    top:100%;
-    right:-100%;
+    top: 100%;
+    right: -100%;
     background-color: #000000;
     flex-direction: column;
-    width:80%;
-    height:100vh;
-    padding:20px;
-    transition:0.3s ease-in-out;
+    width: 80%;
+    height: 100vh;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
   }
-  .nav-menu li{
-    margin:10px 30px;
+  .nav-menu li {
+    margin: 10px 30px;
   }
-  .nav-menu.active{
-    right:0;
+  .nav-menu.active {
+    right: 0;
   }
 }
-
