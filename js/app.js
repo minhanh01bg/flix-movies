@@ -43,7 +43,7 @@ $(document).ready(()=>{
         }
     })
     $('#movies-slide').owlCarousel({
-        items:3,
+        items:2,
         dots:false,
         nav:true,
         navText:navText,
