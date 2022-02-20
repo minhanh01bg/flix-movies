@@ -25,7 +25,7 @@ $(document).ready(()=>{
         autoplayHoverPause:true
     })
     $('#top-movies-slide').owlCarousel({
-        items:2,
+        items:3,
         dots:false,
         loop:true,
         autoplay:false,
@@ -43,7 +43,7 @@ $(document).ready(()=>{
         }
     })
     $('#movies-slide').owlCarousel({
-        items:2,
+        items:3,
         dots:false,
         nav:true,
         navText:navText,
